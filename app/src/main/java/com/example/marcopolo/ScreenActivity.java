@@ -3,6 +3,7 @@ package com.example.marcopolo;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -13,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class ScreenActivity extends AppCompatActivity {
     private String currentStatus;
+    public static final String TAG = "ScreenActivity";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -49,6 +51,7 @@ public class ScreenActivity extends AppCompatActivity {
             correct toast.
              */
             currentStatus = getIntent().getStringExtra("Current Status");
+            Log.d(TAG, "Success");
 
             if(currentStatus.equals("Marco!")){
                 Toast.makeText(ScreenActivity.this,
